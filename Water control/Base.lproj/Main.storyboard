@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YId-l6-M5G">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Количество выпитой воды-->
+        <scene sceneID="qp1-28-QEU">
+            <objects>
+                <tableViewController id="pMC-3g-jno" customClass="WaterTableViewController" customModule="Water_control" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iCJ-v5-73C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaterTableViewCell" rowHeight="90" id="E21-3M-Wjq" customClass="WaterTableViewCell" customModule="Water_control" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E21-3M-Wjq" id="psK-p2-ojS" customClass="WaterTableViewCell" customModule="Water_control" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Количество выпитой воды:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-4L-Vqq">
+                                            <rect key="frame" x="20" y="35" width="216" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Заметка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcW-D4-hx0">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-Tq-qVE">
+                                            <rect key="frame" x="20" y="58" width="216" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="OcW-D4-hx0" id="FfN-l9-aLW"/>
+                                    <outlet property="volume" destination="1O5-Tq-qVE" id="2pM-l6-Wpd"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="DjN-Pu-WCP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pMC-3g-jno" id="fXL-rQ-Qcx"/>
+                            <outlet property="delegate" destination="pMC-3g-jno" id="F0C-W8-2BV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Количество выпитой воды" id="meP-hW-MYM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o4d-9t-uRO">
+                            <connections>
+                                <segue destination="4IZ-tK-NXb" kind="presentation" identifier="AddItem" id="Dkd-26-lTu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RgG-rf-fw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="192.75362318840581" y="132.58928571428572"/>
+        </scene>
+        <!--Новая заметка-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WaterViewController" customModule="Water_control" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество выпитой воды" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQE-ud-8QD">
+                                <rect key="frame" x="20" y="187" width="211" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст заметки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUs-MS-1zA">
+                                <rect key="frame" x="20" y="116" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zif-U2-Ayr">
+                                <rect key="frame" x="20" y="145" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите объём в литрах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-RJ-uFD">
+                                <rect key="frame" x="20" y="216" width="211" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DUs-MS-1zA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="2bY-jv-WgF"/>
+                            <constraint firstItem="PQE-ud-8QD" firstAttribute="leading" secondItem="0O2-RJ-uFD" secondAttribute="leading" id="2xY-lh-2os"/>
+                            <constraint firstItem="DUs-MS-1zA" firstAttribute="leading" secondItem="Zif-U2-Ayr" secondAttribute="leading" id="3Ur-SP-gSP"/>
+                            <constraint firstItem="Zif-U2-Ayr" firstAttribute="top" secondItem="DUs-MS-1zA" secondAttribute="bottom" constant="8" id="EXy-CK-cV2"/>
+                            <constraint firstItem="0O2-RJ-uFD" firstAttribute="top" secondItem="PQE-ud-8QD" secondAttribute="bottom" constant="8" id="Eg8-9s-O4H"/>
+                            <constraint firstItem="PQE-ud-8QD" firstAttribute="top" secondItem="Zif-U2-Ayr" secondAttribute="bottom" constant="8" id="GUC-IM-rnc"/>
+                            <constraint firstItem="Zif-U2-Ayr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ibf-ho-a5r"/>
+                            <constraint firstItem="DUs-MS-1zA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aPm-Tb-GKt"/>
+                            <constraint firstItem="PQE-ud-8QD" firstAttribute="trailing" secondItem="0O2-RJ-uFD" secondAttribute="trailing" id="d6D-4p-v1x"/>
+                            <constraint firstItem="Zif-U2-Ayr" firstAttribute="leading" secondItem="PQE-ud-8QD" secondAttribute="leading" id="y4c-C0-ydh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новая заметка" id="Uuo-QS-vF5">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="K9W-38-RjQ">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="yTc-Y8-Efs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="AlN-Ft-M4b">
+                            <connections>
+                                <segue destination="d9W-Jh-qad" kind="unwind" unwindAction="unwindToWaterListWithSender:" id="GqX-8v-Rki"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="Zif-U2-Ayr" id="V16-qk-L8S"/>
+                        <outlet property="saveButton" destination="AlN-Ft-M4b" id="isa-zC-pU8"/>
+                        <outlet property="volumeTextField" destination="0O2-RJ-uFD" id="nce-oF-wHa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="d9W-Jh-qad" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1952.1739130434785" y="132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="62g-FA-gQ5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YId-l6-M5G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GIb-Nf-Zlc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pMC-3g-jno" kind="relationship" relationship="rootViewController" id="qRO-44-6F5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Itc-tl-SGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717.39130434782612" y="132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Ci-Kc-xlh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4IZ-tK-NXb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EKg-TJ-kXY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mPc-10-649"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAR-UX-xjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="518"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DjN-Pu-WCP"/>
+    </inferredMetricsTieBreakers>
+</document>
